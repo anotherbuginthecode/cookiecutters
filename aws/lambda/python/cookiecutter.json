@@ -1,5 +1,22 @@
 {
-    "repo_name": "cookiecutter_python_lambda",
-    "runtime": "python",
-    "version": 3.8
+    "repo_name": {
+        "default_value": "cookiecutter_python_lambda",
+        "prompt": "Name of your lambda function"
+    },
+    "runtime": {
+        "default_value": "python",
+        "prompt": "Lambda function runtime environment"
+    },
+    "version": 3.8,
+    "create_lambda_layer": {
+        "default_value": "N",
+        "prompt": "Do you need a lambda layer [y/N]?",
+        "help": "Create a lambda layer if you need to use specific packages like pandas, numpy, requests..."
+    },
+    "create_local_virtualenv": {
+        "default_value": "y",
+        "prompt": "Do you need a local virtual environment [y/N]? (defaut is 'y')",
+        "help": "Virtual environment helps you to test your script locally, update requirements.txt 
+        file necessary to run the lambda in Docker and store packages into layers folder (if created previously)"
+    }
 }
