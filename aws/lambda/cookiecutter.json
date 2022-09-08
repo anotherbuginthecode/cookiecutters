@@ -13,12 +13,13 @@
         "python:3.8",
         "python:3.9"
     ],
-    "handler_file": "app.py",
+    "handler_file": "lambda_function.py",
     "version": "0.1.0",
-    "create_lambda_layer": ["y", "N"],
-    "create_local_virtualenv": ["y", "N"],
-    "cicd_github_action": ["y", "N"],
-    "git_init": ["y", "N"],
+    "create_lambda_layer": ["Yes", "No"],
+    "create_local_virtualenv": ["Yes", "No"],
+    "cicd_github_action": ["Yes", "No"],
+    "git_init": ["Yes", "No"],
+    "auto_lambda_creation": ["Yes", "No"],
     "author": "",
     "email": "",
     "organization": ""

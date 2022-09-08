@@ -28,6 +28,9 @@ fi
 cat << EOF > docker/.env
 AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
+AWS_REGION=
+AWS_LAMBDA_FUNCTION_TIMEOUT=5
+AWS_LAMBDA_FUNCTION_MEMORY_SIZE=128
 EOF
 
 if [ {{ cookiecutter.cicd_github_action }} == "N" ];
