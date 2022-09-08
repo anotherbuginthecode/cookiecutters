@@ -3,6 +3,7 @@
 bold=$(tput bold)
 info=$(tput setaf 2)
 reset=$(tput sgr0)
+warn=$(tput setaf 214)
 
 filename=$(basename -- "{{ cookiecutter.handler_file }}")
 extension="${filename##*.}"
@@ -84,7 +85,6 @@ echo $aws_role
 
 echo "${info}INFO: ${reset}Creating the lambda function..."
 (cd code && zip -r9 ../lambda.zip . &>/dev/null)
-rm code/dummy.txt
 
 read -p "role arn: " LAMBDA_ROLE_ARN
 function="$(aws lambda create-function --function-name {{cookiecutter.lambda_name}} --runtime ${RUNTIME} --zip-file fileb://lambda.zip --handler ${filename}.lambda_handler --role "${LAMBDA_ROLE_ARN}")"
@@ -99,4 +99,4 @@ fi
 
 echo ""
 echo ""
-echo "Enjoy your project and remember to ${bold}Praise the sun! \[T]/ ${reset}"
+echo "Enjoy your project and ${bold}Praise the sun! \[T]/ ${reset}"
