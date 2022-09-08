@@ -14,7 +14,7 @@ extension="${filename##*.}"
 if [ "$extension" == "py" ];
 then
 echo " ${info}INFO: ${reset}Creating the file code/{{cookiecutter.handler_file}}${reset}"
-cat << EOF > ../code/{{cookiecutter.handler_file}}
+cat <<EOF >>../code/{{cookiecutter.handler_file}}
 import json
 
 def lambda_handler(event, context):
