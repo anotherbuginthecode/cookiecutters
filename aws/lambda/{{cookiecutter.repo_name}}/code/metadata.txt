@@ -1,0 +1,10 @@
+---
+lambda function: {{ cookiecutter.repo_name }}
+short description: {{ cookiecutter.short_description }} 
+
+Created By: {{ cookiecutter.author }}
+Email: {{ cookiecutter.email }}
+Organization: {{ cookiecutter.github_organization }}
+Creation Date: {% now 'local', '%d/%m/%Y %H:%M' %}
+version: {{ cookiecutter.version }}
+---
