@@ -28,7 +28,7 @@ fi
 if [ {{ cookiecutter.cicd_github_action }} == "N" ];
 then
     rm -rf .github/
-if
+fi
 
 if [ {{ cookiecutter.git_init }} == "y" ];
 then
