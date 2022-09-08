@@ -1,6 +1,13 @@
 {
-    "repo_name": "cookiecutter_lambda",
+    "lambda_name": "cookiecutter_lambda",
     "short_description": "This is a description of my awesome lambda function",
+    "open_source_license": [
+        "MIT",
+        "BSD",
+        "GPLv3",
+        "Apache Software License 2.0",
+        "Not open source"
+    ],
     "runtime": [
         "python:3.6",
         "python:3.8",
@@ -8,22 +15,11 @@
     ],
     "handler_file": "app.py",
     "version": "0.1.0",
-    "create_lambda_layer": [ 
-        "y", 
-        "N"
-    ],
-    "create_local_virtualenv": [ 
-        "y", 
-        "N"
-    ],
+    "create_lambda_layer": ["y", "N"],
+    "create_local_virtualenv": ["y", "N"],
+    "cicd_github_action": ["y", "N"],
+    "git_init": ["y", "N"],
     "author": "",
     "email": "",
-    "github_organization": "",
-    "open_source_license": [
-        "MIT",
-        "BSD",
-        "GPLv3",
-        "Apache Software License 2.0",
-        "Not open source"
-    ]
+    "organization": "",
 }
