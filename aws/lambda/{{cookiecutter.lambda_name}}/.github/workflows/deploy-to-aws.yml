@@ -1,20 +1,22 @@
 name: deploy to lambda
-on: [push]
-jobs:
+on: workflow_dispatch
 
-  deploy_source:
-    name: deploy lambda from source
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout source code
-        uses: actions/checkout@v1
-      - name: default deploy
-        uses: appleboy/lambda-action@master
-        with:
-        {% raw %}
-            aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-            aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-            aws_region: ${{ secrets.AWS_REGION }}
-        {% endraw %}
-            function_name: {{cookiecutter.lambda_name}}
-            source: code/*
+jobs:  #Workflow run is made up of one or more jobs
+    deploy_lambda:
+        runs-on: ubuntu-latest  #Through which Server OS we need to Work (type of machine to run the job on)
+        steps:
+            #Using versioned actions 
+            - uses: actions/checkout@v2
+            - name: Configure AWS Credentials  
+            uses: aws-actions/configure-aws-credentials@v1 #--> Setup the Credential for the AWS cli
+            with:
+                # Created the Secrets Under the Repo only with These Variables
+                {% raw %}
+                aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }} 
+                aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+                aws-region: ${{ secrets.AWS_REGION }}
+                {% endraw %}
+            - name: deploy
+                run: |
+                zip -j deploy.zip ./code/*
+                aws lambda update-function-code --function-name={{coockiecutter.lambda_name}} --zip-file=fileb://deploy.zip 
