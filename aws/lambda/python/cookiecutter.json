@@ -1,0 +1,5 @@
+{
+    "repo_name": "cookiecutter_python_lambda",
+    "runtime": "python",
+    "version": 3.8
+}
