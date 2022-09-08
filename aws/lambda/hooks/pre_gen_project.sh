@@ -10,6 +10,7 @@ reset=$(tput sgr0)
 
 if [ {{ cookiecutter.handler_file }} == *.py ];
 then
+echo " ${info}INFO: ${reset}Creating the file code/{{cookiecutter.handler_file}}${reset}"
 cat << EOF > code/{{cookiecutter.handler_file}}
 import json
 
@@ -20,6 +21,9 @@ def lambda_handler(event, context):
         'body': json.dumps('Hello from Lambda!')
     }
 EOF
+
+echo " ${info}INFO: ${reset}Creating file code/requirements.txt${reset}"
+
 fi
 
 if [ {{ cookiecutter.create_lambda_layer }} == "y" ];
