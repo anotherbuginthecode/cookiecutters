@@ -8,6 +8,7 @@ error=$(tput setaf 160)
 warn=$(tput setaf 214)
 reset=$(tput sgr0)
 
+ll
 cat ./template/python.txt
 
 cat ./template/python.txt > ../code/{{ cookiecutter.handler_file }}
