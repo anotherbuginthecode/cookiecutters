@@ -8,7 +8,7 @@ error=$(tput setaf 160)
 warn=$(tput setaf 214)
 reset=$(tput sgr0)
 
-if [ "{{ cookiecutter.handler_file }}" == "*.py" ];
+if [ {{ cookiecutter.handler_file }} == *.py ];
 then
 cat << EOF > code/{{cookiecutter.handler_file}}
 import json
