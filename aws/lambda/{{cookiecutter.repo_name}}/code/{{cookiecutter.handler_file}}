@@ -1,4 +1,4 @@
-{% if cookiecutter.runtime is match('python*') %}
+{% if 'python' in cookiecutter.handler_file %}
 #----------------------------------------------------------------------------
 # Created By: {{ cookiecutter.author }}
 # Email: {{ cookiecutter.email }}
