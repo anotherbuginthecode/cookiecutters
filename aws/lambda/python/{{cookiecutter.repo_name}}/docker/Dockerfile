@@ -1,6 +1,6 @@
 FROM public.ecr.aws/lambda/{{cookiecutter.runtime}}:{{cookiecutter.version}}
 
-COPY ./docker/requirements.txt .
+COPY ../code/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt --target "${LAMBDA_TASK_ROOT}"
 # Copy function conde
 COPY ./code/ ${LAMBDA_TASK_ROOT}
