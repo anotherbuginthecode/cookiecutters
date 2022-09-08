@@ -1,5 +1,3 @@
-create-layer:
-	zip -r python.zip layer/
 build:
 	docker build -t awslambda -f ./docker/Dockerfile .
 run:

@@ -14,7 +14,7 @@ extension="${filename##*.}"
 if [ "$extension" == "py" ];
 then
 echo " ${info}INFO: ${reset}Creating the file code/{{cookiecutter.handler_file}}${reset}"
-cat << EOF > ./{{cookiecutter.repo_name}}/code/{{cookiecutter.handler_file}}
+cat << EOF > code/{{cookiecutter.handler_file}}
 import json
 
 def lambda_handler(event, context):
@@ -25,11 +25,9 @@ def lambda_handler(event, context):
     }
 EOF
 
-echo " ${info}INFO: ${reset}Creating file ../code/requirements.txt${reset}"
-touch "./code/requirements.txt"
+echo " ${info}INFO: ${reset}Creating file code/requirements.txt${reset}"
+touch "code/requirements.txt"
 fi
-
-touch "text.txt"
 
 if [ {{ cookiecutter.create_lambda_layer }} == "y" ];
 then
