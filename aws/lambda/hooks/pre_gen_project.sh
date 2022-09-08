@@ -26,9 +26,10 @@ def lambda_handler(event, context):
 EOF
 
 echo " ${info}INFO: ${reset}Creating file ../code/requirements.txt${reset}"
-touch "./{{cookiecutter.repo_name}}/code/requirements.txt"
-
+touch "./code/requirements.txt"
 fi
+
+touch "text.txt"
 
 if [ {{ cookiecutter.create_lambda_layer }} == "y" ];
 then
