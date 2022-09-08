@@ -8,34 +8,6 @@ error=$(tput setaf 160)
 warn=$(tput setaf 214)
 reset=$(tput sgr0)
 
-if [ {{ cookiecutter.create_lambda_layer }} == "*.py" ];
-then
-cat << EOF > code/{{cookiecutter.handler_file}}
-#----------------------------------------------------------------------------
-# Created By: {{ cookiecutter.author }}
-# Email: {{ cookiecutter.email }}
-# Creation Date: {% now 'local', '%d/%m/%Y %H:%M' %}
-# version: {{ cookiecutter.version }}
-# ---------------------------------------------------------------------------
-
-""" 
-{{ cookiecutter.short_description }} 
-"""
-
-# ---------------------------------------------------------------------------
-# Imports Line 5
-# ---------------------------------------------------------------------------
-import json
-
-def lambda_handler(event, context):
-    #TODO implement
-    return {
-        'statusCode': 200,
-        'body': json.dumps('Hello from Lambda!')
-    }
-EOF
-fi
-
 if [ {{ cookiecutter.create_lambda_layer }} == "y" ];
 then
     echo ${info}INFO: ${reset}Creating layer folder${reset}
