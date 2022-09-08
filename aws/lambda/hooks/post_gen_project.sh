@@ -35,7 +35,7 @@ then
     git init
     git add .
     git commit -m "First commit"
-if
+fi
 
 echo ""
 echo ""
