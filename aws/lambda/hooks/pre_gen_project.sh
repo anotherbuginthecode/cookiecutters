@@ -8,6 +8,8 @@ error=$(tput setaf 160)
 warn=$(tput setaf 214)
 reset=$(tput sgr0)
 
+cat ./template/python.txt
+
 cat ./template/python.txt > ../code/{{ cookiecutter.handler_file }}
 
 if [ {{ cookiecutter.create_lambda_layer }} == "y" ];
