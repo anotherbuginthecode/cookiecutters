@@ -19,4 +19,4 @@ jobs:  #Workflow run is made up of one or more jobs
             - name: deploy
                 run: |
                 zip -j deploy.zip ./code/*
-                aws lambda update-function-code --function-name={{coockiecutter.lambda_name}} --zip-file=fileb://deploy.zip 
+                aws lambda update-function-code --function-name={{cookiecutter.lambda_name}} --zip-file=fileb://deploy.zip 
