@@ -25,6 +25,11 @@ echo "${info}INFO: ${reset}Creating file code/requirements.txt${reset}"
 touch "code/requirements.txt"
 fi
 
+cat << EOF > docker/.env
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+EOF
+
 if [ {{ cookiecutter.cicd_github_action }} == "N" ];
 then
     rm -rf .github/
