@@ -8,7 +8,10 @@ error=$(tput setaf 160)
 warn=$(tput setaf 214)
 reset=$(tput sgr0)
 
-if [ {{ cookiecutter.handler_file }} == *.py ];
+filename=$(basename -- "{{ cookiecutter.handler_file }}")
+extension="${filename##*.}"
+
+if [ "$extension" == "py" ];
 then
 echo " ${info}INFO: ${reset}Creating the file code/{{cookiecutter.handler_file}}${reset}"
 cat << EOF > code/{{cookiecutter.handler_file}}
