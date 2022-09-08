@@ -6,6 +6,7 @@
         "python:3.8",
         "python:3.9"
     ],
+    "handler_file": "app.py",
     "version": "0.1.0",
     "create_lambda_layer": [ 
         "y", 
