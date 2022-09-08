@@ -1,5 +1,5 @@
 ---
-lambda function: {{ cookiecutter.repo_name }}
+lambda function: {{ cookiecutter.lambda_name }}
 short description: {{ cookiecutter.short_description }} 
 
 Created By: {{ cookiecutter.author }}
