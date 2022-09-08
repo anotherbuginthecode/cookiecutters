@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "Hello world! before"
+echo "Hello world! {{ cookiecutter.repo_name }}"
